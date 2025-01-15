@@ -17,7 +17,7 @@ jobs:
           node-version: '18'
     
       - name: Set environment variables
-        run: echo "SQLITE_DB_LOCATION=$GITHUB_WORKSPACE/todos" >> $GITHUB_ENV
+        run: echo "SQLITE_DB_LOCATION=$GITHUB_WORKSPACE/todos/todo.db" >> $GITHUB_ENV
   
       - name: Create todos directory
         run: mkdir -p $GITHUB_WORKSPACE/todos
