@@ -16,7 +16,7 @@ spec:
       - name: todo-list
         image: babydevcode/todo-list:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources:
             limits:
               memory: "128Mi"
