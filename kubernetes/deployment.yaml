@@ -21,3 +21,29 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+        env:
+            - name: MYSQL_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: data-config
+                  key: MYSQL_HOST
+            - name: MYSQL_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: data-config
+                  key: MYSQL_DB 
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: data-config
+                  key: MYSQL_DATABASE
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: data-config
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
