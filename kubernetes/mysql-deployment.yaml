@@ -47,7 +47,12 @@ spec:
                   key: MYSQL_PASSWORD   
           volumeMounts:
             - name: mysql-storage
-              mountPath: /var/lib/mysql  
+              mountPath: /var/lib/mysql
+            - name: init-scripts
+              mountPath: /docker-entrypoint-initdb.d 
       volumes:
         - name: mysql-storage
           emptyDir: {} 
+        - name: init-scripts
+          configMap:
+            name: data-config

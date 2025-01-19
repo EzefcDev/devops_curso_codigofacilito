@@ -7,3 +7,10 @@ data:
   MYSQL_USER: "user"
   MYSQL_HOST: "db"
   MYSQL_DB: "tododb"
+  SONARQUBE_JDBC_URL: "jdbc:mysql://db:3306/sonar"
+  SONARQUBE_JDBC_USERNAME: "sonaruser"
+  sonar-init.sql: |
+    CREATE DATABASE sonar CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+    CREATE USER 'sonaruser'@'%' IDENTIFIED BY 'sonarpassword';
+    GRANT ALL PRIVILEGES ON sonar.* TO 'sonaruser'@'%';
+    FLUSH PRIVILEGES;
